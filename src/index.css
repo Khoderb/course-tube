@@ -1,0 +1,17 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities"; 
+
+#buscar-submit{
+    background-image: url("./img/lupa.png");
+    background-repeat: no-repeat;
+    background-position:left center;
+    width:40px;
+    position:relative;
+    bottom:35px;
+    left: 225px;
+}
+#buscar-input{
+    width:100%;
+    display:inline;
+}
