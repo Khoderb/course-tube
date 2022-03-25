@@ -5,6 +5,13 @@
 body{
     background-color: rgb(223, 204, 204);
 }
+
+nav{
+    background-image: url("./img/hero2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
 #buscar-submit{
     background-image: url("./img/lupa.png");
     background-repeat: no-repeat;
@@ -22,6 +29,7 @@ body{
 svg:hover{
     color: #fff;
     cursor: pointer;
+    transition:all .3s ease-out;
 }
 
 .counter{
@@ -36,4 +44,10 @@ svg:hover{
     font-weight: bold;
 }
 
+.inputSearch{
+    background: rgba(204, 204, 204, 0.195);
+}
+.inputSearch:hover{
+    background: rgba(204, 204, 204, 0.395);
 
+}
