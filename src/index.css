@@ -2,6 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities"; 
 
+body{
+    background-color: rgb(223, 204, 204);
+}
 #buscar-submit{
     background-image: url("./img/lupa.png");
     background-repeat: no-repeat;
@@ -28,7 +31,9 @@ svg:hover{
     height:16px;
     outline: 2px solid #000;
     text-align:center ;
-    line-height: 13.8px;
+    line-height:16px;
+    font-size: 10px;
+    font-weight: bold;
 }
 
 
