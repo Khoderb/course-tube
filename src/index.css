@@ -16,4 +16,19 @@
     display:inline;
 }
 
+svg:hover{
+    color: #fff;
+    cursor: pointer;
+}
+
+.counter{
+    top: -10px;
+    left: -27px;
+    width:16px;
+    height:16px;
+    outline: 2px solid #000;
+    text-align:center ;
+    line-height: 13.8px;
+}
+
 
