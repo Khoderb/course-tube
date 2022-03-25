@@ -1,19 +1,15 @@
+import CartWidget from "./cartWidget"
+
 const Navbar = () => {
-    
-    
-    
-    
-    
-    
     
     
     return  (
         <div>
-            <header className="bg-orange-400 h-20 shadow-md w-full">
+            <header className="bg-black h-20 shadow-md w-full">
                 <nav className="flex justify-between">
                     <div>
                         <h2 className ="pt-2 px-2 font-black text-xl text-white">Course{''}<span className="text-black">Tube</span></h2>
-                        <p className = "px-3">cursos online</p>
+                        <p className = "px-3">Cursos online</p>
                     </div>
                     <div>
                         <input className="bg-black bg-opacity-5 placeholder-white text-white  outline-0 border-0  mt-5 w-3/4 px-3 h-10 rounded-lg" type="search" id="buscar-input" placeholder="¿Qué vas a aprender hoy?"/>
@@ -23,6 +19,8 @@ const Navbar = () => {
                         <a href="#" className=" hover:text-white">Categorías</a>
                         <a href="#" className=" hover:text-white">Conviértete en instructor</a>
                         <a href="#" className=" hover:text-white font-bold">Login</a>
+                        <CartWidget
+                        />
                     </div>    
                 </nav>
             </header>
