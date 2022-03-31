@@ -1,8 +1,20 @@
+import ItemCount from "./ItemCount";
+
 const ItemListContainer = ({greeting}) => {
+
+    const onAdd = (number) => {
+        alert("You have selected " + number + " items.");
+    }
+
 
     return(
         <>
-            {greeting}        
+            {greeting}
+            <ItemCount
+                initial={0}
+                stock={5}
+                onAdd={onAdd}
+            />
         </>
     );
 

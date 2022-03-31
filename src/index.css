@@ -31,7 +31,7 @@ svg:hover{
     cursor: pointer;
     transition:all .3s ease-out;
 }
-svg{
+svg:not(.p){
     margin:0 50px;
 
 }
