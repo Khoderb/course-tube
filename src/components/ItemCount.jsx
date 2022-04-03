@@ -1,11 +1,11 @@
-import {useState,useEffect} from 'react'
+import { useState,useEffect } from 'react'
 
 const ItemCount = ({ stock, initial, onAdd })=> {
     
     const [count, setCount] = useState(0)
     
     useEffect(() => {
-        count > 0 ? onAdd(count):false;
+        console.log("componente listo")
     }, [count])
        
     const increase = ()=>{ count < stock ? setCount(count + 1 ) : setCount(count)  }
@@ -14,9 +14,9 @@ const ItemCount = ({ stock, initial, onAdd })=> {
  
 return(
     <div className="flex align-middle flex-col">
-        <div className = " flex justify-between text-center py-2 px-2 w-1/5 mx-3  my-2 border-indigo-400 border-2 rounded-lg">
+        <div className = " flex justify-between text-center p-2 w-1/5 mx-3 my-2 border-indigo-400 border-2 rounded-lg">
             <a  
-                className="font-bold text-xl mt-1" href="#"
+                className="font-bold text-xl mt-1"
                 onClick={decrease}
             > 
                 <svg  xmlns="http://www.w3.org/2000/svg" className="p h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -25,8 +25,8 @@ return(
             </a>
                 <strong className="text-xl">{count}</strong>
             <a 
-                className="font-bold text-xl mt-1" href="#"
-                onClick={increase}
+                className="font-bold text-xl mt-1"
+                onClick={count < 5 ? increase: onAdd(count)}
             > 
                 <svg xmlns="http://www.w3.org/2000/svg" className="p h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
