@@ -2,14 +2,14 @@ import { useState,useEffect } from 'react'
 
 const ItemCount = ({ stock, initial, onAdd })=> {
     
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useState(0)
     
     useEffect(() => {
         console.log("componente listo")
     }, [count])
        
-    const increase = ()=>{ count < stock ? setCount(count + 1 ) : setCount(count)  }
-    const decrease = ()=>{ (count <= stock && count > 1) ? setCount(count - 1 ) : setCount(count)  }
+    const increase = ()=>{ count < stock ? setCount(count + 1 ) : null  }
+    const decrease = ()=>{ (count <= stock && count > 0) ? setCount(count - 1 ) : null  }
 
  
 return(
