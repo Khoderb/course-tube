@@ -33,24 +33,21 @@ return(
                 </svg>
             </button>
         </div>
-
         {
         count!==initial?
             (
-                <a className=" w-1/5 text-center p-2 mx-3 rounded-lg font-bold border-indigo-400 border-2 cursor-pointer hover:bg-indigo-700 transition-colors">
+                <button className=" w-1/5 text-center p-2 mx-3 rounded-lg font-bold border-indigo-400 border-2 cursor-pointer hover:bg-indigo-700 transition-colors">
                     Agregar al carrito
 
-                </a>
+                </button>
             ):(
-                <a className=" w-1/5 text-center cursor-not-allowed p-2 mx-3 rounded-lg font-bold border-indigo-400 border-2 hover:bg-indigo-200 transition-colors">
+                <button className=" w-1/5 text-center cursor-not-allowed p-2 mx-3 rounded-lg font-bold border-indigo-400 border-2 hover:bg-indigo-200 transition-colors">
                     Agregar al carrito
-                </a>
+                </button>
             )
         }
-    
     </div>
-);
-
+    );
 }
 
 export default ItemCount 
