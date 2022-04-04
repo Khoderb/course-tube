@@ -14,24 +14,24 @@ const ItemCount = ({ stock, initial, onAdd })=> {
  
 return(
     <div className="flex align-middle flex-col">
-        <div className = " flex justify-between text-center p-2 w-1/5 mx-3 my-2 border-indigo-400 border-2 rounded-lg">
-            <a  
+        <div className = "flex justify-between text-center p-2 w-1/5 mx-3 my-2 border-indigo-400 border-2 rounded-lg">
+            <button  
                 className="font-bold text-xl mt-1"
                 onClick={decrease}
             > 
                 <svg  xmlns="http://www.w3.org/2000/svg" className="p h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     < path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
                 </svg>
-            </a>
+            </button>
                 <strong className="text-xl">{count}</strong>
-            <a 
+            <button 
                 className="font-bold text-xl mt-1"
                 onClick={count < 5 ? increase: onAdd(count)}
             > 
                 <svg xmlns="http://www.w3.org/2000/svg" className="p h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
                 </svg>
-            </a>
+            </button>
         </div>
 
         {

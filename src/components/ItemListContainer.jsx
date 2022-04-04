@@ -3,7 +3,9 @@ import ItemCount from "./ItemCount";
 const ItemListContainer = ({greeting}) => {
 
     const onAdd = (number) => {
-        alert("You have selected " + number + " items.");
+        if (number===5){
+            alert("You have selected " + number + " items.");
+        }
     }
 
 
