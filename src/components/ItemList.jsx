@@ -13,8 +13,8 @@ const ItemList = ({cursos}) => {
                     precio={curso.precio}
                     titulo={curso.titulo}   
                     descripcion={curso.descrip}   
-                    />
-                    ))}
+                />
+              ))}
         </div>
     </>
   )

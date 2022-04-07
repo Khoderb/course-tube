@@ -22,7 +22,8 @@ const ItemListContainer = ({greeting}) => {
             });
         }
     },[])
-console.log(cursos)
+
+    
     return(
         <>
             <ItemList
