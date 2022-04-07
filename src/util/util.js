@@ -1,6 +1,6 @@
 const data =[{
         titulo: "HTML5,CSS3 y JavaScript" ,
-        img: "./img/curso1.jpg" ,
+        img: "./src/img/curso1.jpg" ,
         valor: "./src/img/estrellas.png" ,
         precio: 14.99,
         id:1,
@@ -8,8 +8,8 @@ const data =[{
     },
     {
         titulo: "Aprende a programar" ,
-        img: "../img/curso2.jpg" ,
-        valor: "../img/estrellas.png" ,
+        img: "./src/img/curso2.jpg" ,
+        valor: "./src/img/estrellas.png" ,
         precio: 9.99,
         id:2,
         descrip:"Conoce los fundamentos y principios básicos de la programación creando proyectos"
