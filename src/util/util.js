@@ -1,6 +1,6 @@
 const data =[{
         titulo: "HTML5,CSS3 y JavaScript" ,
-        img: "./src/img/curso1.jpg" ,
+        img: "./src/img/curso1.jpg", 
         valor: "./src/img/estrellas.png" ,
         precio: 14.99,
         id:1,
