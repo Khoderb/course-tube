@@ -11,7 +11,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     const increase = () => { count < stock ? setCount(count + 1) : null }
     const decrease = () => { (count <= stock && count > 0) ? setCount(count - 1) : null }
 
-
     return (
         <div className="flex align-middle flex-col">
             <div className="flex justify-between text-center p-2 w-1/5 mx-3 my-2 border-indigo-400 border-2 rounded-lg">

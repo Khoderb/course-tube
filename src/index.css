@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities"; 
 
 body{
-    background-color: rgb(223, 204, 204);
+    background-color: #f6efef;
 }
 
 nav{
@@ -26,14 +26,13 @@ nav{
     display:inline;
 }
 
-svg:hover{
+svg:hover:not(.p){
     color: #fff;
     cursor: pointer;
     transition:all .3s ease-out;
 }
 svg:not(.p){
     margin:0 50px;
-
 }
 
 .counter{
@@ -57,3 +56,21 @@ svg:not(.p){
     background: rgba(204, 204, 204, 0.395);
 
 }
+
+.item{
+    animation:animate .5s ease;
+}
+.item:hover{
+    transform:scale(1.019);
+    transition:transform 1s;
+}
+@keyframes animate {
+    from{
+        transform: scale(.6);
+        opacity:.5;
+    }
+    to{
+       transform: scale(1);
+        opacity:1;
+    }
+}   
