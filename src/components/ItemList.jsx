@@ -9,7 +9,6 @@ const ItemList = ({cursos}) => {
                <Item
                     key={curso.id}
                     src={curso.img}
-                    valor={curso.valor}
                     precio={curso.precio}
                     titulo={curso.titulo}   
                     descripcion={curso.descrip}   
