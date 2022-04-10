@@ -1,6 +1,6 @@
 import { useState , useEffect } from 'react'
 import ItemDetail from './ItemDetail'
-import {customFetch} from '../util/customFetch'
+import { getItem} from '../util/customFetch'
 
 
 
@@ -10,8 +10,9 @@ const ItemDetailContainer = () => {
     const[item, setItem] = useState({});
 
     useEffect(() => { 
-        customFetch()
-            .then((item) => setItem(item))
+        getItem()
+            .then(item => setItem(item))
+            .catch(err=>console.log(err))
     }, [])
 
 

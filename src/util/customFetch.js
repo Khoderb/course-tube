@@ -79,7 +79,7 @@ const data =[{
 }];
 
 const is_ok = true;
-export const customFetch = () =>{ 
+export const getItem = () =>{ 
 return new Promise((resolve, reject) => {
     if(is_ok){
         setTimeout(() => resolve(data[2]),2000)
