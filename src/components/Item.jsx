@@ -1,13 +1,12 @@
+import { Link } from "react-router-dom";
 
 
-const Item = ({
-    src,
-    precio,
-    titulo,
-    descripcion
-            }) => {
+const Item = ({ titulo, src, descripcion, precio, id }) => {
 
 const desc = descripcion.substr(0,50);
+
+
+
     return (
         <>
             <div className="item w-2/3 flex flex-col mx-auto my-10 h-6/7 rounded-lg shadow-lg bg-white max-w-sm ">
@@ -26,11 +25,13 @@ const desc = descripcion.substr(0,50);
                     <p className=" text-left m-4">
                         {desc}...
                     </p>
-                    <button type="button"  className="mx-auto float-right p-2 border-indigo-300 border-2 hover:bg-sky-600 rounded-lg ">Detalles</button>
+                    <Link to={`/item/${id}`}>
+                        <button className="mx-auto float-right p-2 border-indigo-300 border-2 hover:bg-sky-600 transition-colors rounded-lg ">Detalles</button>
+                    </Link>
                 </div>
             </div>
         </> 
-    )
+    );
 }
 
-export default Item
+export default Item;

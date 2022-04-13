@@ -1,41 +1,37 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-import ItemCount from "./ItemCount";
-import {getData} from "../util/util" ;
+import customFetch from "../util/customFetch";
+import products from "../util/util" ;
+
 
 const ItemListContainer = () => {
 
 
     const[cursos,setCursos] = useState([]);
-
-    const onAdd = (number) => {
-        if (number===5){
-            alert("You have selected " + number + " items.");
-        }
-    }
-    //que cada vez que renderize muestre los items
+    const{ idCategory } = useParams();
+  
     useEffect(()=>{
-      obtenerDatos()
-        function obtenerDatos(){
-            getData().then((data) =>{
-                setCursos(data);    
-            });
-        }
-    },[])
-
+        idCategory === undefined ? (
+            customFetch(2000,products)
+                .then(data =>setCursos(data))
+                .catch(err => console.log(err))    
+            ):(
+             customFetch(2000, products.filter(product => product.categoryId === Number(idCategory)))
+                 .then(data => setCursos(data))
+                 .catch(err => console.log(err))
+            )
+           
+    },[idCategory])
+    
     return(
         <>
             <ItemList
                 cursos={cursos}
             />
-            <ItemCount
-                initial={0}
-                stock={5}
-                onAdd={onAdd}
-            />
+            
         </>
     );
-
 }
 
 export default ItemListContainer;

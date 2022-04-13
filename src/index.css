@@ -58,7 +58,7 @@ svg:not(.p){
 }
 
 .item{
-    animation:animate .5s ease;
+    animation:animate .7s ease-out;
 }
 .item:hover{
     transform:scale(1.019);
@@ -93,12 +93,14 @@ svg:not(.p){
 .añadir:hover{
     background :rgba(20, 161, 204, 0.814);
     transition:background .3s ease;
-
-
 }
 
 .container{
-    animation: show 1s ease-in-out ;
+    animation: show .7s ease-in-out ;
+}
+
+.someEfect{
+    animation: show .7s ease-in-out ;
 }
 
 
