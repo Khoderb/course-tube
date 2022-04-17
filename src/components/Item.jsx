@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-const Item = ({ titulo, src, descripcion, precio, id }) => {
+const Item = ({ titulo, src, descripcion, precio, id, stock }) => {
 
 const desc = descripcion.substr(0,50);
 

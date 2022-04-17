@@ -5,8 +5,8 @@ const products =[{
     precio: 14.99,
     id:1,
     descrip:"Aprende HTML CSS y JavaScript a tu ritmo y conviertete en desarrollador web profesional, tendrás acceso de por vida",
-    instructor:"",
     categoryId:10,
+    stock:1
 
 },
 {
@@ -15,8 +15,8 @@ const products =[{
     precio: 9.99,
     id:2,
     descrip:"Conoce los fundamentos y principios básicos de la programación creando proyectos",
-    instructor:"",
     categoryId:10,
+    stock:1
 },
 {
     titulo: "Curso de Guitarra" ,
@@ -24,8 +24,8 @@ const products =[{
     precio: 9.99,
     id:3,
     descrip:"Aprende guitarra desde cero con instructores expertos, obtén acceso de por vida, el curso incluye partes del instrumento, acordes, escalas, y mucho más, bonus de 29 canciones internacionales.",
-    instructor: "Hugo perotti",
     categoryId:20,
+    stock:1
 },
 {
     titulo: "Curso de React Native" ,
@@ -33,8 +33,8 @@ const products =[{
     precio: 17.99,
     id:4,
     descrip:"Aprende a crear, desarrollar y mantener aplicaciones andorid, iOS con React Native",
-    instructor:"",
     categoryId:30,
+    stock:1
 
 },
 {
@@ -43,8 +43,8 @@ const products =[{
     precio: 16.99,
     id:5,
     descrip:"Comprende el funcionamiento de los circuitos eléctricos que conforman nuestra vida y aprende a desarrollarlos",
-    instructor:"",
     categoryId:40,
+    stock:1
 
 },
 {
@@ -53,17 +53,17 @@ const products =[{
     precio: 13.99,
     id:6,
     descrip:"En este curso conocerás los principios del Machine Learning y aprenderás a implementarlo en tus aplicaciones",
-    instructor:"",
     categoryId:10,
+    stock:1
 },
 {
     titulo: "Curso de NodeJS" ,
     img: "https://www.hd-tecnologia.com/imagenes/articulos/2018/11/Millones-de-programadores-descargaron-una-librer%C3%ADa-infectada-800x474.png",
     precio: 11.99,
     id:7,
-    descrip:"BootCamp de NodeJS, MVC, API's Rest + de 15 Apps",
-    instructor:"",
+    descrip:"BootCamp de NodeJS, MVC, API's Rest construye más de 15 Apps en un solo curso",
     categoryId:10,
+    stock:1
 
 },
 {
@@ -72,8 +72,8 @@ const products =[{
     precio: 15.99,
     id:8,
     descrip:"Desarrolla aplicaciones web con React JS, incluye nextJS, Context, Redux,  MERN y más. Construye +15 Apps y consigue un trabajo ",
-    instructor:"",
     categoryId:10,
+    stock:1
 
 },
 {
@@ -82,8 +82,8 @@ const products =[{
     precio: 14.99,
     id:9,
     descrip:"Lleva ReactJS al siguiente Nivel con Apollo + GraphQL, framework nextJS, backend y mucho más, domina ReactJS",
-    instructor:"",
     categoryId:10,
+    stock:1
 
 }];
 

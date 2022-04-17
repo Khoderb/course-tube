@@ -1,30 +1,45 @@
-
+import { useState } from "react"
+import { Link } from "react-router-dom";
+import ItemCount from "./ItemCount"
 
 const itemDetail = ({ item }) => {
+
+    const [itemCount, setItemCount] = useState(0);
+
+    const onAdd = (count)=>{
+        alert(`has seleccionado ${count} curso: ${item.titulo}`)
+        setItemCount(count)
+    }
     return (
             <>
                 {item && item.titulo ? 
-
                     
-                    <div className="container grid grid-cols-2">
-                        <h2 className="font-black text-center mt-3 relative right-20  text-2xl">{item.titulo}</h2>
-                        <img src={item.img} alt="img-curso" className=" w-3/4 h-72 order-1 relative bottom-36 mx-10 rounded-lg" />
-                        <div className="flex flex-col relative top-24 right-32 ">
-                            <p className=" text-md m-4 text-left">Descripción:{' '}<span className="font-bold">{item.descrip}</span></p>
-                            <p className=" text-md m-4 text-left">Instructor:{' '} <span className="font-bold">{item.instructor}</span></p>
-                            <p className=" text-md m-4 text-left">Precio:{' '}<span className="font-bold">${item.precio}</span></p>
-                            <div className="flex gap-x-10 justify-evenly">
-                                <button className="añadir relative top-20 w-1/3">Añadir al Carrito</button>
-                                <button className="comprar relative top-20 w-1/3">Comprar</button>
-                            </div>
+                    <div className="md:flex gap-x-10 container w-full">
+                        <div>
+                            <h2 className="font-black text-left m-10 text-2xl">{item.titulo}</h2>
+                            <img src={item.img} alt="img-curso" className=" w-4/3 h-72  m-10 rounded-lg" />
+                        </div>
+                        
+                        <div className="mt-20">
+                            <p className=" text-md m-10 text-left">Descripción:{' '}<span className="font-bold">{item.descrip}</span></p>
+                            <p className=" text-md m-10 text-left">Precio:{' '}<span className="font-bold">${item.precio}</span></p>
+                            <p className=" text-md m-10 text-left">Stock:{' '}<span className="font-bold">{item.stock} unidad</span></p>
+                            {
+                                itemCount!==item.stock
+                                        ?   <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
+                                        :   <div className="md:flex justify-evenly">
+                                               <Link to='/cart'><button className="comprar">Checkout</button></Link>
+                                               <Link to='/'><button className="añadir">Seguir comprando</button></Link>
+                                            </div>
+                                        
+                            }
                         </div>
                     </div>
                         
-                                : <h4 className=" someEfect m-3 font-bold text-xl ">cargando..</h4>
-                        
-
+                    : <h4 className=" someEfect m-10 font-bold text-xl ">cargando...</h4>
                             
                 }
+
             </>    
             )
 }
