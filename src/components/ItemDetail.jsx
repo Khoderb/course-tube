@@ -7,7 +7,7 @@ const itemDetail = ({ item }) => {
     const [itemCount, setItemCount] = useState(0);
 
     const onAdd = (count)=>{
-        alert(`has seleccionado ${count} curso: ${item.titulo}`)
+        alert(`Seleccionaste ${count} curso: ${item.titulo}`)
         setItemCount(count)
     }
     return (
