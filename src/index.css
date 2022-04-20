@@ -25,6 +25,12 @@ nav{
     width:100%;
     display:inline;
 }
+.letter-space{
+    letter-spacing: 4px;
+}
+.fix{
+    width:300px;
+}
 
 svg:hover:not(.p){
     color: #fff;
@@ -68,7 +74,6 @@ svg:not(.p){
     padding: 8px;
     background :rgba(20, 204, 20, 0.614);
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0,0, 0.3);
     font-weight: bold;
     color: #fff;
     height:40px;
@@ -116,7 +121,10 @@ svg:not(.p){
 .someEfect{
     animation: show .7s ease-in-out ;
 }
-
+.position{
+    position: relative;
+    left: 480px;
+}
 
 @keyframes show {
     from{

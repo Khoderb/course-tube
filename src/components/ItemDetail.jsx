@@ -1,15 +1,22 @@
 import { useState } from "react"
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext }  from "./CartContext";
 import ItemCount from "./ItemCount"
+import Spinner from "./Spinner";
 
 const itemDetail = ({ item }) => {
 
     const [itemCount, setItemCount] = useState(0);
+    
+    const { addItem } = useContext(CartContext);
 
     const onAdd = (count)=>{
         alert(`Seleccionaste ${count} curso: ${item.titulo}`)
         setItemCount(count)
+        addItem(item)
     }
+
     return (
             <>
                 {item && item.titulo ? 
@@ -36,7 +43,7 @@ const itemDetail = ({ item }) => {
                         </div>
                     </div>
                         
-                    : <h4 className=" someEfect m-10 font-bold text-xl ">cargando...</h4>
+                    : <div><Spinner/></div>
                             
                 }
 

@@ -6,7 +6,8 @@ const products =[{
     id:1,
     descrip:"Aprende HTML CSS y JavaScript a tu ritmo y conviertete en desarrollador web profesional, tendrás acceso de por vida",
     categoryId:10,
-    stock:1
+    stock:1,
+    cantidad:1,
 
 },
 {
@@ -16,7 +17,8 @@ const products =[{
     id:2,
     descrip:"Conoce los fundamentos y principios básicos de la programación creando proyectos",
     categoryId:10,
-    stock:1
+    stock:1,
+    cantidad:1,
 },
 {
     titulo: "Curso de Guitarra" ,
@@ -25,7 +27,8 @@ const products =[{
     id:3,
     descrip:"Aprende guitarra desde cero con instructores expertos, obtén acceso de por vida, el curso incluye partes del instrumento, acordes, escalas, y mucho más, bonus de 29 canciones internacionales.",
     categoryId:20,
-    stock:1
+    stock:1,
+    cantidad:1,
 },
 {
     titulo: "Curso de React Native" ,
@@ -34,7 +37,8 @@ const products =[{
     id:4,
     descrip:"Aprende a crear, desarrollar y mantener aplicaciones andorid, iOS con React Native",
     categoryId:30,
-    stock:1
+    stock:1,
+    cantidad:1,
 
 },
 {
@@ -44,7 +48,8 @@ const products =[{
     id:5,
     descrip:"Comprende el funcionamiento de los circuitos eléctricos que conforman nuestra vida y aprende a desarrollarlos",
     categoryId:40,
-    stock:1
+    stock:1,
+    cantidad:1,
 
 },
 {
@@ -54,7 +59,8 @@ const products =[{
     id:6,
     descrip:"En este curso conocerás los principios del Machine Learning y aprenderás a implementarlo en tus aplicaciones",
     categoryId:10,
-    stock:1
+    stock:1,
+    cantidad:1,
 },
 {
     titulo: "Curso de NodeJS" ,
@@ -63,7 +69,8 @@ const products =[{
     id:7,
     descrip:"BootCamp de NodeJS, MVC, API's Rest construye más de 15 Apps en un solo curso",
     categoryId:10,
-    stock:1
+    stock:1,
+    cantidad:1,
 
 },
 {
@@ -73,7 +80,8 @@ const products =[{
     id:8,
     descrip:"Desarrolla aplicaciones web con React JS, incluye nextJS, Context, Redux,  MERN y más. Construye +15 Apps y consigue un trabajo ",
     categoryId:10,
-    stock:1
+    stock:1,
+    cantidad:1,
 
 },
 {
@@ -83,7 +91,8 @@ const products =[{
     id:9,
     descrip:"Lleva ReactJS al siguiente Nivel con Apollo + GraphQL, framework nextJS, backend y mucho más, domina ReactJS",
     categoryId:10,
-    stock:1
+    stock:1,
+    cantidad:1,
 
 }];
 

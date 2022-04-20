@@ -5,7 +5,6 @@ const Navbar = () => {
     
     
     return(
-        <div>
             <nav className="flex justify-between pt-2 h-24 shadow-md w-full">
                 
                 <div className="ml-3">
@@ -29,11 +28,12 @@ const Navbar = () => {
                 
                 <div className="flex justify-end mt-6">
                     <a href="#" className=" font-black hover:text-white">Sign in</a>
-                    <CartWidget/>
+                    <Link to="/cart">
+                        <CartWidget/>
+                    </Link>
                 </div>    
             </nav>
-        </div>
     )
 }
 
-export default Navbar;
+export default Navbar
