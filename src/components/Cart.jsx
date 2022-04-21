@@ -21,7 +21,7 @@ const Cart = () => {
     return (
 
         
-        <div>
+        <>
             <h1 className =" text-3xl order-1 text-center mt-10 text-sky-700 letter-space ">Your Cart</h1> 
             {
                         cartList.length > 0  
@@ -48,7 +48,11 @@ const Cart = () => {
                                       </div>  
                                     ))   
                                     
-                                    :   <h1 className =" text-xl text-left m-5">Your Cart is Empty ^^</h1>
+                                    :   <>
+                                            <h1 className =" text-xl text-left m-5">Your Cart is Empty ^^</h1>
+                                            <button className=" someEfect bg-blue-500 text-white font-bold p-2 m-5 w-1/5 h-10 rounded hover:bg-indigo-700 transition-colors duration-200"
+                                            onClick={()=>navigate("/")}>Ir a inicio</button>
+                                        </> 
             }                           
                 {   !empty && 
 
@@ -60,7 +64,7 @@ const Cart = () => {
                             onClick={()=>navigate("/")}>Continuar comprando</button>
                         </div>
                 }
-        </div>
+        </>
     )
 }
 
