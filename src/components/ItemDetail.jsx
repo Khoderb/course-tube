@@ -35,7 +35,7 @@ const itemDetail = ({ item }) => {
                                 itemCount!==item.stock
                                         ?   <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
                                         :   <div className="md:flex justify-evenly">
-                                               <Link to='/cart'><button className="comprar">Checkout</button></Link>
+                                               <Link to='/cart'><button className="comprar m-2">Checkout</button></Link>
                                                <Link to='/'><button className="añadir">Seguir comprando</button></Link>
                                             </div>
                                         

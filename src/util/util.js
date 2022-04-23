@@ -7,7 +7,7 @@ const products =[{
     descrip:"Aprende HTML CSS y JavaScript a tu ritmo y conviertete en desarrollador web profesional, tendrás acceso de por vida",
     categoryId:10,
     stock:1,
-    cantidad:1,
+    cantidad:1, 
 
 },
 {

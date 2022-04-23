@@ -42,16 +42,22 @@ svg:not(.p){
 }
 
 .counter{
-    top: -35px;
+    top: -34px;
     left: 17px;
     width:16px;
     height:16px;
-    outline: 2px solid #000;
+    outline: 2px solid rgb(0, 0, 0);
     text-align:center ;
     line-height:16px;
     font-size: 10px;    
     margin:0 50px;
     font-weight: bold;
+}
+.counter:hover{
+    background-color: rgb(11, 136, 239);
+    cursor: pointer;
+    transition:all .3s ease-out;
+    outline: 2px solid #fff;
 }
 
 .inputSearch{
@@ -77,7 +83,7 @@ svg:not(.p){
     font-weight: bold;
     color: #fff;
     height:40px;
-    margin: 10px;
+    margin-bottom: 10px;
     width: 15em;    
 
 }
@@ -123,8 +129,14 @@ svg:not(.p){
 }
 .position{
     position: relative;
+    left: 520px;
+}
+
+.summary{
+    border: 1px solid #888;
+    margin:20px 20px 100px;
+    position: relative;
     top: -50px;
-    left: 500px;
 }
 
 @keyframes show {
