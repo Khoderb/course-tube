@@ -120,16 +120,13 @@ svg:not(.p){
     border-radius:10px;
     width:100%;    
 }
-.container{
-    animation: show .7s ease-in-out ;
-}
 
 .someEfect{
     animation: show .7s ease-in-out ;
 }
 .position{
     position: relative;
-    left: 520px;
+    left: 510px;
 }
 
 .summary{
