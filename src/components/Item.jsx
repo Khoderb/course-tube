@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { format } from "../util/helpers";
 
 
 const Item = ({ titulo, src, descripcion, precio, id, stock }) => {
@@ -16,10 +17,7 @@ const desc = descripcion.substr(0,50);
                 <div className="p-6">
                     <h5 className="text-gray-900 text-xl font-medium mb-2">{titulo}</h5>
                     <p className="text-gray-900 font-bold float-right m-2 block w-full text-right"> 
-                       <strike className="ml-10 float-left">$200</strike>{precio.toLocaleString('en-EN',{
-                           style: 'currency',
-                           currency: 'USD',
-                        })}
+                       <strike className="ml-10 float-left">$200</strike>{format(precio)}
                     </p> 
 
                     <p className=" text-left m-4">

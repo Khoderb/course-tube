@@ -11,18 +11,10 @@ const CartContextProvider = ({children})=>{
 
     //Funciones para el Context 
     const addItem = (cartItem,itemQty) => {
-        const existe = cartList.some(item => item.id === cartItem.id);
-            if(existe){ 
-                const cartListUpdated = cartList.map(item => {
-                    if(item.id === cartItem.id){
-                        item.cantidad+=itemQty;
-                        return item;
-                    } else {
-                        return item;
-                    }
-            });
-            setCartList( [...cartListUpdated] );           
-            
+        
+            if( cartList.some(item => item.id === cartItem.id) ){ 
+                const cartListUpdated = cartList.map(item => item.id === cartItem.id ? item.qty += itemQty : item);
+                setCartList( [...cartListUpdated] );           
             } else {
                 setCartList( [...cartList, {...cartItem, cantidad:itemQty}] );
             }
