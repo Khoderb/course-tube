@@ -10,12 +10,12 @@ const CartContextProvider = ({children})=>{
     const[empty, setEmpty] = useState(true);
 
     //Funciones para el Context 
-    const addItem = cartItem => {
+    const addItem = (cartItem,itemQty) => {
         const existe = cartList.some(item => item.id === cartItem.id);
             if(existe){ 
                 const cartListUpdated = cartList.map(item => {
                     if(item.id === cartItem.id){
-                        item.cantidad++
+                        item.cantidad+=itemQty;
                         return item;
                     } else {
                         return item;
@@ -24,7 +24,7 @@ const CartContextProvider = ({children})=>{
             setCartList( [...cartListUpdated] );           
             
             } else {
-                setCartList( [...cartList, cartItem] );           
+                setCartList( [...cartList, {...cartItem, cantidad:itemQty}] );
             }
         setEmpty(false);
     }

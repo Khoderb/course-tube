@@ -11,10 +11,10 @@ const itemDetail = ({ item }) => {
     
     const { addItem } = useContext(CartContext);
 
-    const onAdd = (count)=>{
+    const onAdd = count =>  {
         alert(`Seleccionaste ${count} curso: ${item.titulo}`)
         setItemCount(count)
-        addItem(item)
+        addItem(item,count)
     }
 
     return (
@@ -32,10 +32,10 @@ const itemDetail = ({ item }) => {
                             <p className=" text-md m-10 text-left">Precio:{' '}<span className="font-bold">${item.precio}</span></p>
                             <p className=" text-md m-10 text-left">Stock:{' '}<span className="font-bold">{item.stock} unidad</span></p>
                             {
-                                itemCount!==item.stock
+                                itemCount<item.stock
                                         ?   <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
                                         :   <div className="md:flex justify-evenly">
-                                               <Link to='/cart'><button className="comprar m-2">Checkout</button></Link>
+                                               <Link to='/cart'><button className="comprar m-2 w-full">Checkout</button></Link>
                                                <Link to='/'><button className="añadir">Seguir comprando</button></Link>
                                             </div>
                                         

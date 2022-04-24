@@ -1,18 +1,25 @@
 import { useState } from 'react'
 
-const ItemCount = ({ stock, initial,onAdd }) => {
+const ItemCount = ({initial,onAdd }) => {
 
     const [count, setCount] = useState(0)
-    const increase = () => { initial < stock ? setCount(initial + 1) : null }
-    const decrease = () => { count > 0 ? setCount(count-1)  : null }
 
     return (
     
         <div className="flex w-3/4 ml-6 ">
-            <div className="flex justify-between text-center p-2 w-full mx-3 my-2 border-indigo-400 border-2 rounded-lg">
-                <button  className="font-bold text-xl" onClick={decrease}>-</button>
-                <strong className="text-xl">{count}</strong>
-                <button className="font-bold text-xl " onClick={increase}>+</button>
+            <div className="flex justify-between text-center p-2 w-full mx-3 my-2 border-indigo-400 border rounded-lg">
+                <button type="button" 
+                        className="font-bold text-xl" 
+                        onClick={()=>{
+                          if (count <= 0) return;
+                          setCount(count-1);
+                }}>-</button>
+                <p className="text-xl">{count}</p>
+                <button className="font-bold text-xl " 
+                        onClick={()=>{
+                          if (count>=5) return
+                          setCount(count+1)
+                }}>+</button>
             </div>
             
             {
