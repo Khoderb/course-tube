@@ -121,7 +121,7 @@ svg:not(.p){
 }
 
 .someEfect{
-    animation: show .7s ease-in-out ;
+    animation: show .3s ease-in-out ;
 }
 .position{
     position: relative;

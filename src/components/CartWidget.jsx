@@ -15,7 +15,7 @@ const CartWidget = () => {
             {
                 cartList.length > 0 ?
                     <div className = "counter bg-blue-900 h-1 w-1 text-white relative rounded-xl">
-                        { badge() }
+                        { badge }
                     </div>: null
             }
         </div>
