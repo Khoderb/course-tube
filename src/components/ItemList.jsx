@@ -5,7 +5,7 @@ const ItemList = ({cursos}) => {
   return (
             <>
               <h2 className="font-black text-center text-3xl mt-16">{ cursos.length === 9 ? "Todos los cursos":""}</h2>
-                <div className="someEffect grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 grid-cols-1 m-4 mt-6" >
+                <div className="animate grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 grid-cols-1 m-4 mt-6" >
                   { 
                     cursos.length > 0 ? 
                       cursos.map(curso => (
@@ -21,7 +21,8 @@ const ItemList = ({cursos}) => {
                         />
                       ))
                       : <div className="position">
-                          <Spinner/>
+                          <Spinner
+                          />
                         </div>
                   }
                 </div>

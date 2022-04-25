@@ -69,8 +69,9 @@ svg:not(.p){
 }
 
 .item{
-    animation:animate .7s ease-out;
+    animation:animate .5s ease-out;
 }
+
 .item:hover{
     transform:scale(1.019);
     transition:transform 1s;
@@ -120,8 +121,11 @@ svg:not(.p){
     width:100%;    
 }
 
-.someEfect{
+.animate{
     animation: show .3s ease-in-out ;
+}
+.itemDetail{
+    animation: show .5s  ;
 }
 .position{
     position: relative;

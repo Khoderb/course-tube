@@ -34,10 +34,10 @@ return (
                 {
                     cartList.length > 0  
                             ? cartList.map( item => ( 
-                                <div className="flex" key={ item.id}>
+                                <div className="flex itemDetail" key={ item.id}>
                                     <div className="md:flex mb-5 justify-between container w-full" >
                                         <div className="m-10">
-                                            <img src={item.img} alt="img-curso" className=" fix h-40  m-5 rounded-lg" />
+                                            <img src={item.img} alt={`img-curso ${item.titulo}`} className=" fix h-40  m-5 rounded-lg" />
                                         </div>
                                         <p className=" my-2 mt-32 ">Curso:{' '}
                                             <span className="font-bold">{item.titulo}</span>
@@ -47,13 +47,13 @@ return (
                                             <p className=" my-2 text-2xl ">Precio:{' '}<span className="font-bold">${item.precio*item.cantidad}</span></p>
                                         </div>
                                     </div>
-                                    <button className=" someEfect bg-red-400 text-white font-bold p-2 h-10 w-1/6 m-5 relative top-24 rounded hover:bg-red-700 transition-colors duration-200"
+                                    <button className="animate bg-red-400 text-white font-bold p-2 h-10 w-1/6 m-5 relative top-24 rounded hover:bg-red-700 transition-colors duration-200"
                                         onClick={()=>handleDelete(item.id)}>Eliminar</button>
                                 </div>  
                            
                             ))  :   <>
-                                        <h1 className =" text-xl text-left m-5">Your Cart is Empty ^^</h1>
-                                        <button className=" someEfect bg-blue-500 text-white font-bold p-2 m-5 w-1/5 h-10 rounded hover:bg-indigo-700 transition-colors duration-200"
+                                        <h1 className ="text-xl text-left m-5">Your Cart is Empty ^^</h1>
+                                        <button className="animate bg-blue-500 text-white font-bold p-2 m-5 w-1/5 h-10 rounded hover:bg-indigo-700 transition-colors duration-200"
                                         onClick={()=>navigate("/")}>Ir a inicio</button>
                                     </> 
                 }                           
@@ -61,10 +61,10 @@ return (
                 {   !empty && 
                     <>
                         <div className="flex justify-end">
-                            <button className=" someEfect bg-gray-400 text-white font-bold p-2 m-5 w-1/6 h-10 rounded hover:bg-gray-700 transition-colors duration-200"
+                            <button className=" itemDetail bg-gray-400 text-white font-bold p-2 m-5 w-1/6 h-10 rounded hover:bg-gray-700 transition-colors duration-200"
                             onClick={handleClear}>Vaciar Carrito</button>
 
-                            <button className=" someEfect bg-blue-500 text-white font-bold p-2 m-5 w-1/5 h-10 rounded hover:bg-indigo-700 transition-colors duration-200"
+                            <button className=" itemDetail bg-blue-500 text-white font-bold p-2 m-5 w-1/5 h-10 rounded hover:bg-indigo-700 transition-colors duration-200"
                             onClick={()=>navigate("/")}>Seguir comprando</button>
                         </div>
                         <Summary/>

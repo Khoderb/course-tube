@@ -8,7 +8,7 @@ const desc = descripcion.substr(0,50);
 
     return (
         <>
-            <div className="item w-2/3 flex flex-col mx-auto my-10 h-6/7 rounded-lg shadow-lg bg-white max-w-sm ">
+            <div className=" item w-2/3 flex flex-col mx-auto my-10 h-6/7 rounded-lg shadow-lg bg-white max-w-sm ">
                 <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
                     <img  src={src} className="w-full h-48 rounded-t-lg" alt={`img product ${titulo}`} />
                 </a>

@@ -21,7 +21,7 @@ const itemDetail = ({ item }) => {
             <>
                 {item && item.titulo ? 
                     
-                    <div className="md:flex gap-x-10 container w-full">
+                    <div className=" itemDetail md:flex gap-x-10  w-full">
                         <div>
                             <h2 className="font-black text-left m-10 text-2xl">{item.titulo}</h2>
                             <img src={item.img} alt="img-curso" className=" w-4/3 h-72  m-10 rounded-lg" />
