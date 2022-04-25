@@ -22,12 +22,17 @@ const CartContextProvider = ({children})=>{
     },[cartList])
 
     //Funciones para el Context 
-    const addItem = (cartItem,itemQty) => {
+    const addItem = (cartItem, itemQty) => {
             if( cartList.some(item => item.id === cartItem.id) ){ 
-                const cartListUpdated = cartList.map(item => item.id === cartItem.id ? item.qty += itemQty : item);
-                setCartList( [...cartListUpdated] );           
-            } else {
-                setCartList( [...cartList, {...cartItem, cantidad:itemQty}] );
+                const newCartList = cartList.map(item => {
+                    if(item.id === cartItem.id){
+                        item.cantidad += itemQty;
+                    }
+                    return item;    
+                })
+                setCartList(newCartList);
+            }else{
+                setCartList([...cartList, {...cartItem, cantidad: itemQty}])
             }
         setEmpty(false);
     }
