@@ -1,22 +1,30 @@
 import { useState , useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import customFetch from "../util/customFetch";
-import products from "../util/util" ;
 import ItemDetail from './ItemDetail'
+import { doc, getDoc } from "firebase/firestore";
+import db from '../util/firebaseConfig';
 
 
 const ItemDetailContainer = () => {
 
+const [ item, setItem ] = useState({});
+const { idNumber } = useParams();
 
+useEffect(() => {
 
-    const[item, setItem] = useState({});
-    const { idNumber} = useParams();
+    const fb_fetch = async () => { 
+        try {  
+            const docRef = doc(db, "products", idNumber);
+            const docSnap = await getDoc(docRef);
 
-    useEffect(() => {
-        customFetch(2000, products.find(item => item.id === Number(idNumber)))
-            .then(item => setItem(item))
-            .catch(err => console.log(err));
-    }, [])
+            if (docSnap.exists()) setItem({...docSnap.data(), id: docSnap.id});
+
+        } catch (error) {
+            console.log("Error getting document:", error);
+        }
+    }
+  fb_fetch();
+}, [])
 
     return (
             < ItemDetail

@@ -13,13 +13,7 @@ nav{
     background-position: bottom;
 }
 #buscar-submit{
-    background-image: url("./public/img/lupa.png");
-    background-repeat: no-repeat;
-    background-position:left center;
     width:40px;
-    position:relative;
-    bottom:35px;
-    left:225px;
 }
 #buscar-input{
     width:100%;
@@ -31,7 +25,24 @@ nav{
 .fix{
     width:300px;
 }
+.link{
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    padding:10px;
+    font-size: 18px;
+    text-shadow: 1px 1px 5px #fff;
+}
 
+.link:hover{
+    color: #fff;
+    transition:all .2s ease-out;
+
+}
+.logo{
+    text-shadow:1px 1px 4px rgb(222, 222, 248);
+}
 svg:hover:not(.p){
     color: #fff;
     cursor: pointer;
@@ -42,15 +53,14 @@ svg:not(.p){
 }
 
 .counter{
-    top: -34px;
-    left: 17px;
+    top: -35px;
+    left: 72px;
     width:16px;
     height:16px;
     outline: 2px solid rgb(0, 0, 0);
     text-align:center ;
     line-height:16px;
     font-size: 10px;    
-    margin:0 50px;
     font-weight: bold;
 }
 .counter:hover{
@@ -62,6 +72,7 @@ svg:not(.p){
 
 .inputSearch{
     background: rgba(204, 204, 204, 0.195);
+    width:100px;
 }
 .inputSearch:hover{
     background: rgba(204, 204, 204, 0.395);
@@ -133,10 +144,16 @@ svg:not(.p){
 }
 
 .summary{
-    border: 1px solid #888;
-    margin:20px 20px 100px;
+    margin:20px 20px 100px 60px;
     position: relative;
-    top: -50px;
+    top: -100px;
+    padding: 10px;
+}
+
+.summary:hover{
+    transform: scale(1.02);
+    background-color: rgba(200, 200, 200, .1);
+    transition: all .5s ease-in-out;
 }
 
 @keyframes show {

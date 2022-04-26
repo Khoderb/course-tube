@@ -8,11 +8,9 @@ import Spinner from "./Spinner";
 const itemDetail = ({ item }) => {
 
     const [itemCount, setItemCount] = useState(0);
-    
     const { addItem } = useContext(CartContext);
-
     const onAdd = count =>  {
-        alert(`Seleccionaste ${count} curso: ${item.titulo}`)
+        alert(`Seleccionaste ${count} curso/s: ${item.titulo}`)
         setItemCount(count)
         addItem(item,count)
     }
