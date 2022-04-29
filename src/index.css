@@ -11,11 +11,6 @@ nav{
     background-size: cover;
     background-position: bottom;
 }
-#buscar-submit{
-    width:40px;
-    position:relative;
-    left: -70px;
-}
 #buscar-input{
     width:100%;
 }
@@ -151,7 +146,7 @@ svg:not(.p){
 
 .summary:hover{
     transform: scale(1.02);
-    background-color: rgba(200, 200, 200, .2);
+    background-color: rgba(200, 200, 200, .3);
     transition: all .5s ease-in-out;
 }
 
@@ -180,11 +175,8 @@ svg:not(.p){
     }
     
     .inputSearch{
-        margin-left:50px ;        /* margin-left:20px; */
-    }
-    #buscar-submit{
-        left: 410px;
-        top:-60px;
+        margin-left: 110px;     
+        margin-bottom:0;
     }
     .counter{
         left:40px;
@@ -198,6 +190,12 @@ svg:not(.p){
         width:250px;
         margin: 120px auto;
     }
+    .searchBtn{
+        position:relative;
+        left: 350px;
+        top: -65px;
+    }
+
 }
 
 @keyframes show {

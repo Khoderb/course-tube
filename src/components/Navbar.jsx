@@ -13,12 +13,23 @@ const Navbar = () => {
                   </Link>  
                 </div>
                 
-                <div className="w-3/4">
+                <div className="xl:w-full w-1/2">
                     <input className="inputSearch shadow-md placeholder-white placeholder-opacity-50 text-white outline-0 border-0 mt-6  px-3 h-10 rounded-lg" type="text" id="buscar-input" placeholder="¿What do you wont to learn?"
                     />
                 </div >
                 <div className="mt-8 ml-3">
-                    <button id="buscar-submit"><img src="../src/public/img/lupa.png"></img></button>
+                    <button className="searchBtn">
+                        <svg className="w-7 h-7 p"
+                            id="buscar-submit" 
+                            fill="none" stroke="currentColor" 
+                            viewBox="0 0 24 24" 
+                            xmlns="http://www.w3.org/2000/svg">  
+                        <path strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth={2} 
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
                 </div>
                 <div className="responsive flex justify-evenly items-start mt-5">
                     <Link to="/category/10"><button className="link" >Programing</button></Link>
