@@ -14,7 +14,7 @@ const Navbar = () => {
                 </div>
                 
                 <div className="xl:w-full w-1/2">
-                    <input className="inputSearch shadow-md placeholder-white placeholder-opacity-50 text-white outline-0 border-0 mt-6  px-3 h-10 rounded-lg" type="text" id="buscar-input" placeholder="¿What do you wont to learn?"
+                    <input className="inputSearch shadow-md placeholder-white placeholder-opacity-50 text-white outline-0 border-0      mt-6  px-3 h-10 rounded-lg" type="text" placeholder="¿What do you wont to learn?"
                     />
                 </div >
                 <div className="mt-8 ml-3">

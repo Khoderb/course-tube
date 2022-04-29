@@ -11,9 +11,7 @@ nav{
     background-size: cover;
     background-position: bottom;
 }
-#buscar-input{
-    width:100%;
-}
+
 .letter-space{
     letter-spacing: 4px;
 }
