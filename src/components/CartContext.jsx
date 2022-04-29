@@ -9,29 +9,22 @@ const CartContextProvider = ({children})=>{
     const [cartList, setCartList] = useState([]);
     const [empty, setEmpty] = useState(true);
     const [total, setTotal] = useState(0);
-    const [badge,setBadge] = useState(0)
-    const [search,setSearch] = useState('')
-    
-    useEffect(()=>{
-        const badge = cartList.reduce((total, item) => total + item.cantidad, 0);
-        setBadge(badge);
-    },[cartList])
 
     useEffect( ()=> {
-        const nuevoTotal = cartList.reduce((total, item) => total + item.precio * item.cantidad, 0);
-        setTotal(nuevoTotal);
+        const newTotal = cartList.reduce((total, item) => total + item.price * item.quantity, 0);
+        setTotal(newTotal);
     },[cartList])    
 
-    //Funciones para el Context 
-    const addItem = (cartItem, itemQty) => {
+    //Functions for the Context 
+    const addItem = (cartItem, qty) => {
         if( cartList.some(item => item.id === cartItem.id) ){ 
             const newCartList = cartList.map(item => {
-                if( item.id === cartItem.id ) item.cantidad += itemQty;
-                return item;    
+                if( item.id === cartItem.id ) item.quantity += qty;
+                    return item;  //retorna   
             })
             setCartList(newCartList);
         }else{
-            setCartList([...cartList, {...cartItem, cantidad: itemQty}])
+            setCartList([...cartList, {...cartItem, quantity: qty}])
         }
     setEmpty(false);
     }
@@ -43,10 +36,10 @@ const CartContextProvider = ({children})=>{
     const clearCartList = () => {
         setCartList([]);
     }
-
-    //al eliminar/vaciar del cartList resetea la cantidad de c/ item que no está en el cartlist.
-    const resetQty = ()=>{
-        cartList.map(item => item.cantidad !== 1 ? item.cantidad = item.cantidad: item.cantidad = 1);
+    //reset qty of items deleteded form Cart
+    const resetQty = () => {
+        cartList.map(item => item.quantity !== 1 ? 
+            item.quantity = item.quantity : item.quantity = 1);
     }
 
     return(
@@ -58,9 +51,8 @@ const CartContextProvider = ({children})=>{
                     clearCartList,
                     setEmpty,
                     empty,
-                    badge,
                     resetQty,
-                    total,
+                    total                    
                 }}>
 
             {children}

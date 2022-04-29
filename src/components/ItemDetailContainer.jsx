@@ -12,7 +12,7 @@ const { idNumber } = useParams();
 
 useEffect(() => {
 
-    const fb_fetch = async () => { 
+    const fireFetch = async () => { 
         try {  
             const docRef = doc(db, "products", idNumber);
             const docSnap = await getDoc(docRef);
@@ -23,7 +23,7 @@ useEffect(() => {
             console.log("Error getting document:", error);
         }
     }
-  fb_fetch();
+    fireFetch();
 }, [])
 
     return (

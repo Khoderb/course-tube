@@ -5,7 +5,6 @@
 body{
     background-color: #f6efef;
 }
-
 nav{
     background-image: url("./public/img/hero2.png");
     background-repeat: no-repeat;
@@ -14,10 +13,11 @@ nav{
 }
 #buscar-submit{
     width:40px;
+    position:relative;
+    left: -70px;
 }
 #buscar-input{
     width:100%;
-    display:inline;
 }
 .letter-space{
     letter-spacing: 4px;
@@ -30,17 +30,16 @@ nav{
     color: #000;
     cursor: pointer;
     font-weight: bold;
-    padding:10px;
-    font-size: 18px;
-    text-shadow: 1px 1px 5px #fff;
+    padding: 10px;
+    font-size: 16px;
+    text-shadow: 1px 2px 10px #fff;
+    font-weight: 700;
 }
-
 .link:hover{
     color: #fff;
     transition:all .2s ease-out;
-
 }
-.logo{
+.login{
     text-shadow:1px 1px 4px rgb(222, 222, 248);
 }
 svg:hover:not(.p){
@@ -50,16 +49,17 @@ svg:hover:not(.p){
 }
 svg:not(.p){
     margin:0 50px;
+    width:33px;
+    height:33px;
 }
-
 .counter{
-    top: -35px;
-    left: 72px;
-    width:16px;
-    height:16px;
-    outline: 2px solid rgb(0, 0, 0);
+    top: -42px;
+    left: 78px;
+    width:18px;
+    height:18px;
+    outline: 3px solid rgb(0, 0, 0);
     text-align:center ;
-    line-height:16px;
+    line-height:18px;
     font-size: 10px;    
     font-weight: bold;
 }
@@ -69,14 +69,11 @@ svg:not(.p){
     transition:all .3s ease-out;
     outline: 2px solid #fff;
 }
-
 .inputSearch{
-    background: rgba(204, 204, 204, 0.195);
-    width:100px;
+    background: #cccccc32;
 }
 .inputSearch:hover{
     background: rgba(204, 204, 204, 0.395);
-
 }
 
 .item{
@@ -97,7 +94,6 @@ svg:not(.p){
     height:40px;
     margin-bottom: 10px;
     width: 15em;    
-
 }
 
 .comprar:hover{
@@ -115,9 +111,8 @@ svg:not(.p){
     height:40px;
     margin: 10px;
     width:100%;    
-    
-    
 }
+
 .añadir:hover{
     background :rgba(17, 182, 232, 0.696);
     transition:background .3s ease;
@@ -133,10 +128,10 @@ svg:not(.p){
 }
 
 .animate{
-    animation: show .3s ease-in-out ;
+    animation: show .5s ease-in-out ;
 }
-.itemDetail{
-    animation: show .5s  ;
+.grow{
+    animation: animate .5s ease-in-out ;
 }
 .position{
     position: relative;
@@ -148,12 +143,53 @@ svg:not(.p){
     position: relative;
     top: -100px;
     padding: 10px;
+    border-top: 1px solid rgb(20, 222, 0);
 }
 
 .summary:hover{
     transform: scale(1.02);
-    background-color: rgba(200, 200, 200, .1);
+    background-color: rgba(200, 200, 200, .2);
     transition: all .5s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+    .custom {
+        display:flex;
+        flex-direction:column;
+        justify-content:start ;
+        height: 600px;
+        overflow: hidden;
+    }
+    .link{
+        font-size: 24px;
+    }
+    .responsive{
+        flex-direction:column;
+        justify-content:start;
+        margin-bottom: 30px;
+        align-items:center;
+    }
+
+    svg:not(.p){
+        margin:0;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .inputSearch{
+        margin-left:50px ;        /* margin-left:20px; */
+    }
+    #buscar-submit{
+        left: 410px;
+        top:-60px;
+    }
+    .counter{
+        left:40px;
+        top:-57px;
+    }
+    .logo{
+        margin:0 auto;
+    }
 }
 
 @keyframes show {

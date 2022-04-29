@@ -6,29 +6,28 @@ import db from "../util/firebaseConfig";
 
 const ItemListContainer = () => {
 
-const[cursos,setCursos] = useState([]);
+const[products,setProducts] = useState([]);
 const{ idCategory } = useParams();
 
 useEffect( ()=>{
-    const fb_fetch = async () => {
+    const fireFetch = async () => {
         try {
             const querySnapshot = await getDocs(collection(db, "products"));
             const dbProducts = querySnapshot.docs.map( doc => ({
                 id: doc.id,
                 ...doc.data()
             }));
-                idCategory === undefined ? setCursos(dbProducts.sort())
-                : setCursos(dbProducts.filter(curso => curso.categoryId === Number(idCategory)))
+                idCategory === undefined ? setProducts(dbProducts.sort())
+                : setProducts(dbProducts.filter(product => product.categoryId === Number(idCategory)))
         }catch (err) {
             console.log(err);
         }
     }
-        fb_fetch()
-
+        fireFetch()
 },[idCategory])
 
 //return
-    return <ItemList cursos={cursos} />
+    return <ItemList products={products} />
 }
 
 export default ItemListContainer;

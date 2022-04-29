@@ -10,31 +10,31 @@ const itemDetail = ({ item }) => {
     const [itemCount, setItemCount] = useState(0);
     const { addItem } = useContext(CartContext);
     const onAdd = count =>  {
-        alert(`Seleccionaste ${count} curso/s: ${item.titulo}`)
+        alert(`You have selected ${itemCount} course: ${item.title}`)
         setItemCount(count)
         addItem(item,count)
     }
 
     return (
             <>
-                {item && item.titulo ? 
+                {item && item.title ? 
                     
-                    <div className=" itemDetail md:flex gap-x-10  w-full">
+                    <div className=" animate md:flex gap-x-10  w-full">
                         <div>
-                            <h2 className="font-black text-left m-10 text-2xl">{item.titulo}</h2>
+                            <h2 className="font-black text-left m-10 text-2xl">{item.title}</h2>
                             <img src={item.img} alt="img-curso" className=" w-4/3 h-72  m-10 rounded-lg" />
                         </div>
                         
                         <div className="mt-20">
-                            <p className=" text-md m-10 text-left">Descripción:{' '}<span className="font-bold">{item.descrip}</span></p>
-                            <p className=" text-md m-10 text-left">Precio:{' '}<span className="font-bold">${item.precio}</span></p>
-                            <p className=" text-md m-10 text-left">Stock:{' '}<span className="font-bold">{item.stock} unidad</span></p>
+                            <p className=" text-md m-10 text-left">Description:{' '}<span className="font-bold">{item.descrip}</span></p>
+                            <p className=" text-md m-10 text-left">Price:{' '}<span className="font-bold">${item.price}</span></p>
+                            <p className=" text-md m-10 text-left">Stock:{' '}<span className="font-bold">{item.stock} Unit</span></p>
                             {
                                 itemCount<item.stock
                                         ?   <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
                                         :   <div className="md:flex justify-evenly">
                                                <Link to='/cart'><button className="comprar m-2 w-full">Checkout</button></Link>
-                                               <Link to='/'><button className="añadir">Seguir comprando</button></Link>
+                                               <Link to='/'><button className="añadir">Continue shopping</button></Link>
                                             </div>
                                         
                             }
