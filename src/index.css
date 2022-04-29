@@ -64,6 +64,7 @@ svg:not(.p){
 }
 .inputSearch{
     background: #cccccc32;
+    width: 100%;
 }
 .inputSearch:hover{
     background: rgba(204, 204, 204, 0.395);
