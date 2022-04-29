@@ -1,15 +1,38 @@
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import { CartContext } from "./CartContext"
 import { format } from "../util/helpers"
-import { serverTimestamp } from "firebase/firestore"
-import { collection, doc, setDoc } from "firebase/firestore";
+import { collection, doc, setDoc, serverTimestamp, updateDoc } from "firebase/firestore";
 import db from '../util/firebaseConfig';
 
 
 const Summary = () => {
+//Hooks
+const { cartList, clearCartList } = useContext(CartContext)
 
-const { total, cartList, clearCartList } = useContext(CartContext)
+const [total, setTotal] = useState(0);
+
+useEffect( ()=> {
+    const newTotal = cartList.reduce((total, item) => total + item.price * item.quantity, 0);
+    setTotal(newTotal);
+},[cartList])    
+
+//Functions 
+const updateStock = arrayOrder  => {
     
+    arrayOrder.forEach( item => {
+       
+        cartList.forEach(async itemCL => {
+            
+            if(itemCL.id === item.id ){
+                const itemRef = doc(db, "products", itemCL.id);
+                await updateDoc(itemRef, {
+                  stock: (itemCL.stock-itemCL.quantity) 
+                });
+            }
+        });
+    });
+}
+
 const handleOrder = async () => {
     const order = {
         buyer : {
@@ -29,7 +52,8 @@ const handleOrder = async () => {
     try {
         const newOrder = doc(collection(db, "orders"));
             await setDoc(newOrder, order);
-            alert("Order created successfully \n apoint this ID: "+ newOrder.id);    
+            alert("Order created successfully\nApoint this ID: "+ newOrder.id);    
+            updateStock(order.items);
             clearCartList();
     }catch(err){
         console.log(' Order catch ',err) 
@@ -38,13 +62,14 @@ const handleOrder = async () => {
 
     
     return (
-        <div className=" animate summary shadow-lg flex w-1/4 gap-4 flex-col items-start rounded-lg">
-            <h1 className="mx-auto font-bold text-3xl letter-space">Summary</h1>
-            <p className="mx-auto ">Subtotal:{' '}<span className="font-bold">{format(total)}</span></p>
-            <p className="mx-auto ">Taxes:{' '}<span className="font-bold text-md">{format(total*0.18)}</span></p>
-            <p className="mx-auto ">Discount:{' '}<span className="font-bold text-md">{format(total*0.18*-1)}</span></p>
-            <p className="mx-auto text-2xl">Total:{' '}<span className="font-bold text-md">{format(total)}</span></p>
-            <button className="comprar mx-auto" onClick={handleOrder}>Checkout now</button>
+        <div className=" animate summary shadow-md flex w-1/5 items-center gap-4 flex-col rounded-lg">
+           <h1 className="font-bold text-3xl letter-space">Summary</h1>
+            <p>Subtotal:{' '}<span className="font-bold">{format(total)}</span></p>
+            <p>Taxes:{' '}<span className="font-bold">{format(total*0.11)}</span></p>
+            <p>Discount:{' '}<span className="font-bold">{format(total*0.11*-1)}</span></p>
+            <p className="text-2xl font-black  ">Total:{' '}<span className="font-bold text-md">{format(total)}</span></p>
+            <button className=" bg-emerald-400 hover:bg-emerald-500 font-bold mb-2 w-full p-2 shadow rounded-lg" 
+                    onClick={handleOrder}>Checkout now</button>
         </div>
     )
 }

@@ -12,10 +12,11 @@ const itemDetail = ({ item }) => {
     const { addItem } = useContext(CartContext);
     
     const onAdd = count =>  {
-        alert(`You have selected ${itemCount} course: ${item.title}`)
         setItemCount(count)
+        alert(`You have selected ${count} course: ${item.title}`)
         addItem(item,count)
     }
+    
 
     return (
             <>
@@ -33,10 +34,10 @@ const itemDetail = ({ item }) => {
                                 <p className=" text-md m-10 text-left">Price:{' '}<span className="font-bold">{format(item.price)}</span></p>
                                 <p className=" text-md m-10 text-left">Stock:{' '}<span className="font-bold">{item.stock} Units</span></p>
                                 {
-                                    itemCount <= 0
+                                    itemCount <=0 
                                             ?   <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd}/>
-                                            :   <div className="md:flex justify-evenly">
-                                                   <Link to='/cart'><button className="comprar m-2 w-full">Checkout</button></Link>
+                                            :   <div className="md:flex items-center justify-evenly">
+                                                   <Link to='/cart'><button className="comprar py-2 w-full">Checkout</button></Link>
                                                    <Link to='/'><button className="añadir">Continue shopping</button></Link>
                                                 </div>
 

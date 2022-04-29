@@ -86,14 +86,15 @@ svg:not(.p){
 }
 
 .comprar {
-    padding: 8px;
+    padding: 5px;
     background :rgba(20, 204, 20, 0.614);
     border-radius: 10px;
     font-weight: bold;
     color: #fff;
-    height:40px;
-    margin-bottom: 10px;
-    width: 15em;    
+    height:45px;
+    margin: 10px;
+    width:190px;    
+
 }
 
 .comprar:hover{
@@ -119,8 +120,10 @@ svg:not(.p){
 }
 
 .disabled{
+    padding:5px;
     background: rgba(204, 204, 204, 0.45);
     cursor: not-allowed;
+    font-weight: bold;
     height:45px;
     margin:10px;
     border-radius:10px;
@@ -143,7 +146,7 @@ svg:not(.p){
     position: relative;
     top: -100px;
     padding: 10px;
-    border-top: 1px solid rgb(20, 222, 0);
+    border-top: 1px solid rgb(0, 0, 0);
 }
 
 .summary:hover{
@@ -154,8 +157,8 @@ svg:not(.p){
 
 @media only screen and (max-width: 768px) {
     .custom {
-        display:flex;
-        flex-direction:column;
+        display:grid;
+        grid-template-columns: 1fr;
         justify-content:start ;
         height: 600px;
         overflow: hidden;
@@ -189,6 +192,11 @@ svg:not(.p){
     }
     .logo{
         margin:0 auto;
+    }
+
+    .summary{
+        width:250px;
+        margin: 120px auto;
     }
 }
 

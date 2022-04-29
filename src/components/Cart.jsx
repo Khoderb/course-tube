@@ -42,11 +42,11 @@ return (
                 {   
                     !empty && 
                         <>
-                            <div className="flex justify-end">
-                                <button className=" animate bg-gray-400 text-white font-bold p-2 m-5 w-1/6 h-10 rounded hover:bg-gray-700 transition-colors duration-200"
+                            <div className="flex md:justify-end justify-center">
+                                <button className=" animate bg-gray-400 text-white font-bold p-2 m-5 md:w-1/6 h-10 rounded hover:bg-gray-700 transition-colors duration-200"
                                 onClick={handleClear}>Clear Cart</button>
     
-                                <button className=" animate bg-blue-500 text-white font-bold p-2 m-5 w-1/5 h-10 rounded hover:bg-indigo-700 transition-colors duration-200"
+                                <button className=" animate bg-blue-500 text-white font-bold p-2 m-5 md:w-1/5 h-10 rounded hover:bg-indigo-700 transition-colors duration-200"
                                 onClick={()=>navigate("/")}>Continue Shopping</button>
                             </div>
                             <Summary/>
