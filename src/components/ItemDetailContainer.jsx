@@ -8,13 +8,13 @@ import db from '../util/firebaseConfig';
 const ItemDetailContainer = () => {
 
 const [ item, setItem ] = useState({});
-const { idNumber } = useParams();
+const { id } = useParams();
 
 useEffect(() => {
 
     const fireFetch = async () => { 
         try {  
-            const docRef = doc(db, "products", idNumber);
+            const docRef = doc(db, "products", id);
             const docSnap = await getDoc(docRef);
 
             if (docSnap.exists()) setItem({...docSnap.data(), id: docSnap.id});
