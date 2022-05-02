@@ -1,6 +1,6 @@
 import { useContext ,useEffect} from 'react'
 import{ useNavigate } from 'react-router-dom'
-import { CartContext } from './CartContext'
+import { CartContext } from '../context/CartContext'
 import CartItem from './CartItem'
 import Summary from './Summary'
 

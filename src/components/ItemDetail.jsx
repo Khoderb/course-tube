@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext }  from "./CartContext";
+import { CartContext }  from "../context/CartContext";
 import ItemCount from "./ItemCount"
 import Spinner from "./Spinner";
 import { format } from "../util/helpers";

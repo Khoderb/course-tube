@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { format } from "../util/helpers";
-import { CartContext } from "./CartContext";
+import { CartContext } from "../context/CartContext";
 
 const CartItem = ({item}) => {
 

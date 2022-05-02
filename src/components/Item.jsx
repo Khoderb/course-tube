@@ -4,7 +4,7 @@ import { format } from "../util/helpers";
 
 const Item = ({ title, src, descrip, price, id }) => {
 
-const desc = descrip.substr(0,50);
+const desc = descrip.substr(0,40);
 
     return (
         <>
