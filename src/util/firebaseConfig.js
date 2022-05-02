@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyABOtbCf2qVo_Qib9U8jyscG69w0FBvUes",
+  apiKey: "process.env.API_KEY",
   authDomain: "course-tube-react.firebaseapp.com",
   projectId: "course-tube-react",
   storageBucket: "course-tube-react.appspot.com",
   messagingSenderId: "763862018438",
-  appId: "1:763862018438:web:fc8473e2599d03f2afe407",
+  appId: "process.env.APP_ID",
   measurementId: "G-RRN4Q9QCHB"
 };
 
