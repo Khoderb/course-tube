@@ -4,7 +4,7 @@ import CartWidget from "./CartWidget";
 const Navbar = () => {
 
     return(
-            <nav className="custom grid md:grid-cols-3 grid-cols-1 xl:grid-cols-5 pt-2 h-28 shadow-md w-full">
+            <nav className="custom grid md:grid-cols-3 grid-cols-1 xl:grid-cols-5 pt-2 sm:h-auto pb-3 shadow-md w-full">
                 <div className="ml-3 logo ">
                   <Link to={"/"}>
                     <h2 className ="cursor-pointer pt-4 px-2 font-black text-3xl text-white">Course{''}
@@ -17,9 +17,9 @@ const Navbar = () => {
                     <input className="inputSearch shadow-md placeholder-white placeholder-opacity-50 text-white outline-0 border-0      mt-6  px-3 h-10 rounded-lg" type="text" placeholder="¿What do you wont to learn?"
                     />
                 </div >
-                <div className="mt-8 ml-3">
+                <div className="mt-8 ml-3 ">
                     <button className="searchBtn">
-                        <svg className="w-7 h-7 p"
+                        <svg className="p w-7 h-7"
                             id="buscar-submit" 
                             fill="none" stroke="currentColor" 
                             viewBox="0 0 24 24" 

@@ -1,4 +1,4 @@
-import { useContext ,useEffect} from 'react'
+import { useContext, useEffect} from 'react'
 import{ useNavigate } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
 import CartItem from './CartItem'
@@ -31,7 +31,6 @@ return (
                                     key={item.id}
                                     item={item}
                                 />
-                                    
                             ))  :   <div className="flex justify-evenly mt-10">
                                         <h1 className ="text-xl text-left m-5">Your Cart Is Empty ^^</h1>
                                         <button className="animate bg-blue-500 text-white font-bold p-2 m-5 w-1/5 h-10 rounded hover:bg-indigo-700 transition-colors duration-200"
@@ -47,7 +46,7 @@ return (
                                 onClick={handleClear}>Clear Cart</button>
     
                                 <button className=" animate bg-blue-500 text-white font-bold p-2 m-5 md:w-1/5 h-10 rounded hover:bg-indigo-700 transition-colors duration-200"
-                                onClick={()=>navigate("/")}>Continue Shopping</button>
+                                onClick={() => navigate("/")}>Continue Shopping</button>
                             </div>
                             <Summary/>
                         </>
